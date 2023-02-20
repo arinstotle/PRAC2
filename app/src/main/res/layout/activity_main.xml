@@ -31,7 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -39,7 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,9 +55,9 @@
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:elevation="10dp"
         android:text="Button"
+        android:textSize="16sp"
         app:cornerRadius="15dp" />
 
     <Button
@@ -63,8 +65,8 @@
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:text="Button"
+        android:textSize="16sp"
         app:cornerRadius="15dp" />
 
     <Button
@@ -72,8 +74,8 @@
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:text="Button"
+        android:textSize="16sp"
         app:cornerRadius="15dp" />
 
     <Button
@@ -81,36 +83,41 @@
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:text="Button"
+        android:textSize="16sp"
         app:cornerRadius="15dp" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="left"
         android:layout_margin="8dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/imageButton14"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginEnd="8dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
-        app:srcCompat="@drawable/right_arrow_next_svgrepo_com__1_" />
+        app:srcCompat="@drawable/next_right_arrow_svgrepo_com" />
 
 </LinearLayout>
