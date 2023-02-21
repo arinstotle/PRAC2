@@ -82,7 +82,8 @@
                 android:fontFamily="@font/baumans"
                 android:text="@string/regist_number"
                 android:textSize="14sp"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="15dp"
+                app:icon="@drawable/baseline_phone_24" />
 
             <Button
                 android:id="@+id/email"
@@ -93,7 +94,8 @@
                 android:fontFamily="@font/baumans"
                 android:text="@string/regist_email"
                 android:textSize="14sp"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="15dp"
+                app:icon="@drawable/baseline_email_24" />
 
             <Button
                 android:id="@+id/google"
@@ -104,7 +106,8 @@
                 android:fontFamily="@font/baumans"
                 android:text="@string/regist_Google"
                 android:textSize="14sp"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="15dp"
+                app:icon="@drawable/icons8_google_64" />
 
             <Button
                 android:id="@+id/anon"
@@ -115,7 +118,8 @@
                 android:fontFamily="@font/baumans"
                 android:text="@string/without_registr"
                 android:textSize="14sp"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="15dp"
+                app:icon="@drawable/icons8_facebook_200" />
 
             <TextView
                 android:id="@+id/entering_mes"

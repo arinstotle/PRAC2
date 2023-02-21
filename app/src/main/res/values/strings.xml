@@ -8,5 +8,9 @@
     <string name="greetings">Hello world! Have Fun.</string>
     <string name="regist">Choose the registration form:</string>
     <string name="enter_name">Please enter your name:</string>
-
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="tasks">Tasks</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
 </resources>
