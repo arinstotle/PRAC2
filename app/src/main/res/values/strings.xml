@@ -4,5 +4,7 @@
     <string name="regist_email">Email Address</string>
     <string name="regist_Google">Continue with Google</string>
     <string name="without_registr">Continue without registration</string>
-
+    <string name="logo">#Company name#</string>
+    <string name="greetings">Hello world! Have Fun.</string>
+    <string name="regist">Choose the registration form:</string>
 </resources>
