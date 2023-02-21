@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PRAC2</string>
+    <string name="regist_number">Phone number</string>
+    <string name="regist_email">Email Address</string>
+    <string name="regist_Google">Continue with Google</string>
+    <string name="without_registr">Continue without registration</string>
+
 </resources>

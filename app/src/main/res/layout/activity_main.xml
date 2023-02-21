@@ -6,17 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/horizont_back"
     >
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView2">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             tools:layout_conversion_absoluteHeight="0dp"
             tools:layout_conversion_absoluteWidth="411dp"
@@ -29,18 +28,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/cardview_shadow_end_color"
-                app:srcCompat="@drawable/more_svgrepo_com__3_" />
+                app:srcCompat="@android:drawable/ic_dialog_info" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/company_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -49,7 +48,7 @@
                 android:textSize="34sp" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/regist_mess"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -58,51 +57,51 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/choice_reg_way"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="TextView" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/phone"
                 android:layout_width="380dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:elevation="10dp"
-                android:text="Button"
-                android:textSize="16sp"
+                android:text="@string/regist_number"
+                android:textSize="14sp"
                 app:cornerRadius="15dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/email"
                 android:layout_width="380dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:text="Button"
-                android:textSize="16sp"
+                android:text="@string/regist_email"
+                android:textSize="14sp"
                 app:cornerRadius="15dp" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/google"
                 android:layout_width="380dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:text="Button"
-                android:textSize="16sp"
+                android:text="@string/regist_Google"
+                android:textSize="14sp"
                 app:cornerRadius="15dp" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/anon"
                 android:layout_width="380dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:text="Button"
-                android:textSize="16sp"
+                android:text="@string/without_registr"
+                android:textSize="14sp"
                 app:cornerRadius="15dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/entering_mes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
@@ -112,7 +111,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/enterName"
                 android:layout_width="380dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="8dp"
@@ -125,13 +124,12 @@
                 android:text="Name" />
 
             <ImageButton
-                android:id="@+id/imageButton14"
+                android:id="@+id/imageButton16"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom|right"
-                android:layout_marginRight="8dp"
-                android:backgroundTint="@color/cardview_shadow_end_color"
-                app:srcCompat="@drawable/next_right_arrow_svgrepo_com" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="8dp"
+                app:srcCompat="@android:drawable/ic_menu_send" />
 
         </LinearLayout>
     </ScrollView>
