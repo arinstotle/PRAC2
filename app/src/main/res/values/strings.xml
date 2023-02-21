@@ -7,4 +7,6 @@
     <string name="logo">#Company name#</string>
     <string name="greetings">Hello world! Have Fun.</string>
     <string name="regist">Choose the registration form:</string>
+    <string name="enter_name">Please enter your name:</string>
+
 </resources>
