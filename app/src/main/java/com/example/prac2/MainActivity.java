@@ -2,6 +2,7 @@ package com.example.prac2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -16,6 +17,7 @@ import com.example.prac2.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     final private String TAG = "Main Activity";
+    private String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +30,16 @@ public class MainActivity extends AppCompatActivity {
         binding.companyName.setText("Binding!");
         binding.logo.setImageResource(R.drawable.ssssssssssssssssssss);
 
-        binding.enterName.setOnKeyListener(new View.OnKeyListener()
-                                           {
-                                               public boolean onKey(View v, int keyCode, KeyEvent event)
-                                               {
-                                                   if(event.getAction() == KeyEvent.ACTION_DOWN &&
-                                                           (keyCode == KeyEvent.KEYCODE_ENTER))
-                                                   {
-                                                       String strCatName = binding.enterName.getText().toString();
-                                                       binding.next.setVisibility(View.VISIBLE);
-                                                       return true;
-                                                   }
-                                                   return false;
-                                               }
-                                           }
+        binding.enterName.setOnKeyListener((v, keyCode, event) -> {
+            if(event.getAction() == KeyEvent.ACTION_DOWN &&
+                    (keyCode == KeyEvent.KEYCODE_ENTER))
+            {
+                name = binding.enterName.getText().toString();
+                binding.next.setVisibility(View.VISIBLE);
+                return true;
+            }
+            return false;
+        }
         );
 
         TextView nameOfCompany = (TextView)findViewById(R.id.company_name);
@@ -51,18 +49,22 @@ public class MainActivity extends AppCompatActivity {
         ImageView logo = (ImageView)findViewById(R.id.logo);
         Button googleRegistration = (Button)findViewById(R.id.google);
 
-//        nameOfCompany.setText(R.string.someName);
-//        logo.setImageResource(R.drawable.ssssssssssssssssssss);
+    //        nameOfCompany.setText(R.string.someName);
+    //        logo.setImageResource(R.drawable.ssssssssssssssssssss);
 
-        binding.anon.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                enterName.setVisibility(View.VISIBLE);
-                                                enteringName.setVisibility(View.VISIBLE);
-                                            }
-                                        }
+        binding.anon.setOnClickListener(v -> {
+            enterName.setVisibility(View.VISIBLE);
+            enteringName.setVisibility(View.VISIBLE);
+        }
 
         );
+
+        binding.next.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CourseActivity.class);
+            name = (name == null)? "User" : name;
+            intent.putExtra("userName", name);
+            startActivity(intent);
+        });
 
 //        notRegister.setOnClickListener(new View.OnClickListener() { //программный способ установки слушателя
 //            @Override
