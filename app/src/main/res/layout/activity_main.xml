@@ -104,6 +104,7 @@
                 android:layout_gravity="center"
                 android:backgroundTint="@color/purple_1"
                 android:fontFamily="@font/baumans"
+                android:onClick="continueWithGoogle"
                 android:text="@string/regist_Google"
                 android:textSize="14sp"
                 app:cornerRadius="15dp"
@@ -134,7 +135,7 @@
                 android:visibility="invisible" />
 
             <EditText
-                android:id="@+id/enterName"
+                android:id="@+id/enter_name"
                 android:layout_width="380dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
