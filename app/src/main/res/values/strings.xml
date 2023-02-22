@@ -4,6 +4,7 @@
     <string name="regist_email">Email Address</string>
     <string name="regist_Google">Continue with Google</string>
     <string name="without_registr">Continue without registration</string>
+    <string name="info_description">Used for more information</string>
     <string name="company_namme">#Company name#</string>
     <string name="greetings">Hello world! Have Fun.</string>
     <string name="regist">Choose the registration form:</string>
@@ -18,4 +19,13 @@
     <string name="art">Art</string>
     <string name="math">Math</string>
     <string name="someName">NAME</string>
+    <string name="exit_button">Used to exit the panel.</string>
+    <string name="logout_button">Used to logout.</string>
+    <string name="for_map_button">Used to open the progress map.</string>
+    <string name="for_open_panel_button">Used to open the panel.</string>
+    <string name="for_profile_button">Used to open your profile.</string>
+    <string name="for_settings_button">Used to open settings.</string>
+    <string name="for_notifications_button">Used to open notifications.</string>
+    <string name="for_messages_button">Used to open messages.</string>
+
 </resources>
