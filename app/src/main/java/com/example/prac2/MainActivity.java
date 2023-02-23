@@ -1,7 +1,12 @@
 package com.example.prac2;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,12 +16,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.prac2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     final private String TAG = "Main Activity";
+    static final String ACCESS_MESSAGE="ACCESS_MESSAGE";
     private String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, CourseActivity.class);
             name = (name == null)? "User" : name;
             intent.putExtra("userName", name);
-            startActivity(intent);
+            // startActivity(intent);
+            mStartForResult.launch(intent);
         });
 
 //        notRegister.setOnClickListener(new View.OnClickListener() { //программный способ установки слушателя
@@ -74,6 +82,23 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent intent = result.getData();
+                        String accessMessage = intent.getStringExtra(ACCESS_MESSAGE);
+                        Toast toast = Toast.makeText(MainActivity.this, accessMessage, Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                    else {
+                        Toast toast = Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                }
+            });
 
     public void continueWithGoogle(View view) { //декларативный способ установки слушателя
         Log.i(TAG, "Once there will be a normal registration. But not today.");
