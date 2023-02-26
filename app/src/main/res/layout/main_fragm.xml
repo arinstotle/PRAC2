@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainFragmLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/uuuuuuu"
@@ -9,25 +10,25 @@
 
 
     <ImageButton
-        android:contentDescription="@string/for_open_panel_button"
         android:id="@+id/open_panel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
+        android:contentDescription="@string/for_open_panel_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_start_24" />
 
     <ImageButton
-        android:contentDescription="@string/for_notifications_button"
         android:id="@+id/notifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
+        android:contentDescription="@string/for_notifications_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_notifications_24" />
@@ -188,40 +189,40 @@
         app:layout_constraintVertical_bias="0.9">
 
         <ImageButton
-            android:contentDescription="@string/for_profile_button"
             android:id="@+id/pprofile_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/cardview_shadow_start_color"
+            android:contentDescription="@string/for_profile_button"
             app:srcCompat="@drawable/proff" />
 
         <ImageButton
-            android:contentDescription="@string/for_map_button"
             android:id="@+id/mmap_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/cardview_shadow_start_color"
+            android:contentDescription="@string/for_map_button"
             app:srcCompat="@drawable/mapka" />
 
         <ImageButton
-            android:contentDescription="@string/for_messages_button"
             android:id="@+id/mmessage_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/cardview_shadow_start_color"
+            android:contentDescription="@string/for_messages_button"
             app:srcCompat="@drawable/mailma" />
 
         <ImageButton
-            android:contentDescription="@string/for_settings_button"
             android:id="@+id/ssettings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
             android:backgroundTint="@color/cardview_shadow_start_color"
+            android:contentDescription="@string/for_settings_button"
             app:srcCompat="@drawable/sett" />
     </LinearLayout>
 

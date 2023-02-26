@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     final private String TAG = "Main Activity";
     static final String ACCESS_MESSAGE="ACCESS_MESSAGE";
-    private String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,47 +32,57 @@ public class MainActivity extends AppCompatActivity {
                 getLayoutInflater()
         );
         setContentView(binding.getRoot());
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.mainlayout,
+                            RegistrationFragment.class, null)
+                    .commit();
+        }
+
+
         // setContentView(R.layout.activity_main);
 
-        binding.companyName.setText("Binding!");
-        binding.logo.setImageResource(R.drawable.ssssssssssssssssssss);
+//        binding.companyName.setText("Binding!");
+//        binding.logo.setImageResource(R.drawable.ssssssssssssssssssss);
+//
+//        binding.enterName.setOnKeyListener((v, keyCode, event) -> {
+//            if(event.getAction() == KeyEvent.ACTION_DOWN &&
+//                    (keyCode == KeyEvent.KEYCODE_ENTER))
+//            {
+//                name = binding.enterName.getText().toString();
+//                binding.next.setVisibility(View.VISIBLE);
+//                return true;
+//            }
+//            return false;
+//        }
+//        );
 
-        binding.enterName.setOnKeyListener((v, keyCode, event) -> {
-            if(event.getAction() == KeyEvent.ACTION_DOWN &&
-                    (keyCode == KeyEvent.KEYCODE_ENTER))
-            {
-                name = binding.enterName.getText().toString();
-                binding.next.setVisibility(View.VISIBLE);
-                return true;
-            }
-            return false;
-        }
-        );
+//        TextView nameOfCompany = (TextView)findViewById(R.id.company_name);
+//        TextView enterName = (TextView)findViewById(R.id.entering_mes);
+//        EditText enteringName = (EditText) findViewById(R.id.enter_name);
+//        Button notRegister = (Button)findViewById(R.id.anon);
+//        ImageView logo = (ImageView)findViewById(R.id.logo);
+//        Button googleRegistration = (Button)findViewById(R.id.google);
+//
+//    //        nameOfCompany.setText(R.string.someName);
+//    //        logo.setImageResource(R.drawable.ssssssssssssssssssss);
+//
+//        binding.anon.setOnClickListener(v -> {
+//            enterName.setVisibility(View.VISIBLE);
+//            enteringName.setVisibility(View.VISIBLE);
+//        }
 
-        TextView nameOfCompany = (TextView)findViewById(R.id.company_name);
-        TextView enterName = (TextView)findViewById(R.id.entering_mes);
-        EditText enteringName = (EditText) findViewById(R.id.enter_name);
-        Button notRegister = (Button)findViewById(R.id.anon);
-        ImageView logo = (ImageView)findViewById(R.id.logo);
-        Button googleRegistration = (Button)findViewById(R.id.google);
-
-    //        nameOfCompany.setText(R.string.someName);
-    //        logo.setImageResource(R.drawable.ssssssssssssssssssss);
-
-        binding.anon.setOnClickListener(v -> {
-            enterName.setVisibility(View.VISIBLE);
-            enteringName.setVisibility(View.VISIBLE);
-        }
-
-        );
-
-        binding.next.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CourseActivity.class);
-            name = (name == null)? "User" : name;
-            intent.putExtra("userName", name);
-            // startActivity(intent);
-            mStartForResult.launch(intent);
-        });
+//        );
+//
+//        binding.next.setOnClickListener(v -> {
+//            Intent intent = new Intent(MainActivity.this, CourseActivity.class);
+//            name = (name == null)? "User" : name;
+//            intent.putExtra("userName", name);
+//            // startActivity(intent);
+//            mStartForResult.launch(intent);
+//        });
 
 //        notRegister.setOnClickListener(new View.OnClickListener() { //программный способ установки слушателя
 //            @Override
@@ -83,24 +93,24 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
-    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent intent = result.getData();
-                        String accessMessage = intent.getStringExtra(ACCESS_MESSAGE);
-                        Toast toast = Toast.makeText(MainActivity.this, accessMessage, Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                    else {
-                        Toast toast = Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                }
-            });
-
-    public void continueWithGoogle(View view) { //декларативный способ установки слушателя
-        Log.i(TAG, "Once there will be a normal registration. But not today.");
-    }
+//    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+//            new ActivityResultCallback<ActivityResult>() {
+//                @Override
+//                public void onActivityResult(ActivityResult result) {
+//                    if (result.getResultCode() == Activity.RESULT_OK) {
+//                        Intent intent = result.getData();
+//                        String accessMessage = intent.getStringExtra(ACCESS_MESSAGE);
+//                        Toast toast = Toast.makeText(MainActivity.this, accessMessage, Toast.LENGTH_LONG);
+//                        toast.show();
+//                    }
+//                    else {
+//                        Toast toast = Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG);
+//                        toast.show();
+//                    }
+//                }
+//            });
+//
+//    public void continueWithGoogle(View view) { //декларативный способ установки слушателя
+//        Log.i(TAG, "Once there will be a normal registration. But not today.");
+//    }
 }
