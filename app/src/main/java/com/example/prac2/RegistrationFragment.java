@@ -1,5 +1,6 @@
 package com.example.prac2;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -34,8 +35,7 @@ public class RegistrationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        registrationFragmentBinding.companyName.setText("Aragon Inc.");
-        registrationFragmentBinding.logo.setImageResource(R.drawable.ssssssssssssssssssss);
+        init();
 
         registrationFragmentBinding.anon.setOnClickListener(new View.OnClickListener() { //программный способ установки слушателя
             @Override
@@ -60,15 +60,16 @@ public class RegistrationFragment extends Fragment {
         registrationFragmentBinding.next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Fragment fragment = new MainFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("un", name);
+                fragment.setArguments(bundle);
                 FragmentTransaction fragmentTransaction = getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction();
                 fragmentTransaction.replace(R.id.mainlayout, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
             }
         });
     }
@@ -77,5 +78,15 @@ public class RegistrationFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+    }
+
+    public void init() {
+        registrationFragmentBinding.companyName.setText("Aragon Inc.");
+        registrationFragmentBinding.logo.setImageResource(R.drawable.ssssssssssssssssssss);
     }
 }

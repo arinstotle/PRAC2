@@ -13,28 +13,26 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.prac2.databinding.MainFragmBinding;
+import com.example.prac2.databinding.RegistrationFragmentBinding;
 
 public class MainFragment extends Fragment {
 
     final private String MFTAG = "Main Fragment";
+    private String username;
+    private MainFragmBinding mainFragmBinding;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // return super.onCreateView(inflater, container, savedInstanceState);
-        Toast.makeText(this.getContext(), "onCreateView method called", Toast.LENGTH_SHORT).show();
-        Log.i(MFTAG, "onCreateView method called");
-        View rootView = inflater.inflate(R.layout.main_fragm, container, false);
-        return rootView;
+        mainFragmBinding = MainFragmBinding.inflate(
+                inflater, container, false
+        );
+        return mainFragmBinding.getRoot();
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainFragmBinding mainFragmBinding = MainFragmBinding.inflate(
-                getLayoutInflater()
-        );
-        Toast.makeText(this.getContext(), "onCreate method called", Toast.LENGTH_SHORT).show();
-        Log.i(MFTAG, "onCreate method called");
     }
     @Override
     public void onAttach(@NonNull Context context) {
@@ -48,6 +46,13 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Toast.makeText(this.getContext(), "onViewCreated method called", Toast.LENGTH_SHORT).show();
         Log.i(MFTAG, "onViewCreated method called");
+        mainFragmBinding.greetingMessage.setText("ASSBUT");
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            username = bundle.getString("un");
+            username = (username.equals(""))? "User" : username;
+            mainFragmBinding.greetingMessage.setText("Hello, " + username);
+        }
     }
 
     @Override

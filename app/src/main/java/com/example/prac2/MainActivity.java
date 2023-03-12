@@ -9,6 +9,7 @@ import com.example.prac2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String username;
     static final String ACCESS_MESSAGE="ACCESS_MESSAGE";
 
     @Override
@@ -26,5 +27,6 @@ public class MainActivity extends AppCompatActivity {
                             RegistrationFragment.class, null)
                     .commit();
         }
+
     }
 }
